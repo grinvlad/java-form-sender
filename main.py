@@ -21,7 +21,7 @@ def wait_till(time_to_send_form: str) -> None:
         time_to_send_form = dateparser.parse(time_to_send_form).strftime('%H:%M:%S')
         while True:
             now = datetime.now().strftime('%H:%M:%S')
-            if now >= time_to_send_form:
+            if now == time_to_send_form:
                 print('The time has come!')
                 break
             print('waiting...')
@@ -32,11 +32,10 @@ def wait_till(time_to_send_form: str) -> None:
 
 def main():
     wait_till("15:19:59")  # time when form will be sent
-    code = send_form(student_name='Гринь Владислав Владимирович',
+    code = send_form(student_name='Воронцов Дмитрий Вадимович',
                      home_task='04. Implementor',
                      teacher_name='Каменев Юрий Владимирович')
     print(f'Response code: {code}')
-    print('smth')
 
 
 if __name__ == '__main__':
