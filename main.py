@@ -2,6 +2,7 @@ import sys
 import requests
 import dateparser
 from datetime import datetime
+from http.client import responses
 
 
 def send_form(*, student_name: str, home_task: str, teacher_name: str) -> int:
@@ -26,7 +27,7 @@ def wait_till(time_to_send_form: str) -> None:
                 break
             print('waiting...')
     except KeyboardInterrupt:
-        print('not waiting anymore :(')
+        print('\nnot waiting anymore :(')
         sys.exit()
 
 
@@ -35,7 +36,7 @@ def main():
     code = send_form(student_name='Воронцов Дмитрий Вадимович',
                      home_task='04. Implementor',
                      teacher_name='Каменев Юрий Владимирович')
-    print(f'Response code: {code}')
+    print(f'\nResponse code: {code} ({responses[code]})')
 
 
 if __name__ == '__main__':
