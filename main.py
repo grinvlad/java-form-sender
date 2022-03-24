@@ -7,7 +7,7 @@ from datetime import datetime
 def send_form(*, student_name: str, home_task: str, teacher_name: str) -> int:
     url = "https://docs.google.com/forms/d/e/1FAIpQLSc0Lk5uKCLMd9-5H0MZafGf-LmShY-VAgs5iYS21LG5bedD5A/formResponse"
     values = {
-        # keys have taken from input tags of google form
+        # keys from input tags of google form
         'entry.1052913965': student_name,
         'entry.2015510883': home_task,
         'entry.638434999': teacher_name
